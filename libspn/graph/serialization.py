@@ -125,8 +125,8 @@ def deserialize_graph(data, load_param_vals=True, sess=None,
     if load_param_vals and ops:
         sess.run(ops)
 
-    # Link nodes
-    for n, nd in zip(nodes, node_datas):
+    # Link nodes  ## WARNING: use sorted since we want to visit Concat node before PermProducts
+    for n, nd in sorted(zip(nodes, node_datas), key=lambda x:x[1]['node_type']):
         if n.is_op:
             n.deserialize_inputs(nd, nodes_by_name)
 

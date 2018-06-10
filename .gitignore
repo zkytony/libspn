@@ -1,6 +1,0 @@
-__pycache__
-.dir-locals.el
-.eggs
-dist
-build
-libspn.egg-info

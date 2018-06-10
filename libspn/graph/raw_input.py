@@ -23,7 +23,7 @@ class RawInput(VarNode):
         name (str): Name of the node
     """
 
-    def __init__(self, feed=None, num_vars=1, name="ContVars"):
+    def __init__(self, feed=None, num_vars=1, name="RawInput"):
         if not isinstance(num_vars, int) or num_vars < 1:
             raise ValueError("num_vars must be a positive integer")
         self._num_vars = num_vars
