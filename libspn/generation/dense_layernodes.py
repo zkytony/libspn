@@ -467,6 +467,9 @@ class DenseSPNGeneratorLayerNodes:
                 # Create a default SumsLayer node
                 with tf.name_scope("Layer%s" % depth):
                     sums_layer = SumsLayer(name="SumsLayer-%s.%s" % (depth, 1))
+                    if depth == 15:
+                        self._sums_layer = sums_layer
+
                 # Initialize a counter for keeping track of number of sums
                 # modelled in the layer node
                 layer_num_sums = 0

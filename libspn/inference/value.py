@@ -136,12 +136,12 @@ class LogValue:
             dimension corresponds to the batch size.
         """
         def fun(node, *args):
-            if self._dropconnect_keep_prob and isinstance(node, BaseSum):
+            if self._dropconnect_keep_prob is not None and isinstance(node, BaseSum):
                 kwargs = dict(
                     dropconnect_keep_prob=self._dropconnect_keep_prob)
             else:
                 kwargs = dict()
-            if self._dropprod_keep_prob and isinstance(node, ConvProd2D):
+            if self._dropprod_keep_prob is not None and isinstance(node, ConvProd2D):
                 kwargs['dropout_keep_prob'] = self._dropprod_keep_prob
             with tf.name_scope(node.name):
                 if (self._inference_type == InferenceType.MARGINAL
