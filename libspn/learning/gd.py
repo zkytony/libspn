@@ -231,7 +231,7 @@ class GDLearning:
             dropprod_keep_prob = maybe_first(dropprod_keep_prob, self._dropprod_keep_prob)
             noise = maybe_first(noise, self._noise)
             batch_noise = maybe_first(batch_noise, self._batch_noise)
-            value_gen = LogValue(
+            self._value_gen = LogValue(
                 dropconnect_keep_prob=dropconnect_keep_prob,
                 dropprod_keep_prob=dropprod_keep_prob,
                 noise=noise, batch_noise=batch_noise,
@@ -245,11 +245,11 @@ class GDLearning:
                         dropprod_keep_prob=dropprod_keep_prob,
                         noise=noise, batch_noise=batch_noise)
                 else:
-                    likelihood = value_gen.get_value(self._root)
+                    likelihood = self._value_gen.get_value(self._root)
             elif self._root.ivs is None:
                 raise StructureError("Root should have IVs node when doing supervised learning.")
             else:
-                likelihood = value_gen.get_value(self._root)
+                likelihood = self._value_gen.get_value(self._root)
             return -reduce_fn(likelihood)
 
     def confidence_penalty_loss(
