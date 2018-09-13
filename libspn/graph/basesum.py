@@ -360,7 +360,6 @@ class BaseSum(OpNode, abc.ABC):
                 self.logger.debug1("{}: Applying dropout with p={} to pairwise "
                                    "multiplications.".format(self, dropconnect_keep_prob))
                 mask = self._create_dropconnect_mask(dropconnect_keep_prob, tf.shape(reducible))
-                print(mask)
                 reducible = tf.reshape(
                     tf.where(mask, reducible, tf.fill(tf.shape(reducible), zero_prob_val)),
                     tf.shape(reducible))
