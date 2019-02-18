@@ -32,6 +32,7 @@ from libspn.graph.stridedslice import StridedSlice2D
 from libspn.graph.weights import Weights
 from libspn.graph.weights import assign_weights
 from libspn.graph.weights import initialize_weights
+from libspn.graph.raw_input import RawInput
 from libspn.graph.serialization import serialize_graph
 from libspn.graph.serialization import deserialize_graph
 from libspn.graph.saver import Saver, JSONSaver
