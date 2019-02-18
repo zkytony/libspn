@@ -199,12 +199,12 @@ class GDLearning:
             dropprod_keep_prob = maybe_first(dropprod_keep_prob, self._dropprod_keep_prob)
             noise = maybe_first(noise, self._noise)
             batch_noise = maybe_first(batch_noise, self._batch_noise)
-            value_gen = LogValue(
+            self._value_gen = LogValue(
                 dropconnect_keep_prob=dropconnect_keep_prob, dropprod_keep_prob=dropprod_keep_prob,
                 noise=noise, inference_type=self._value_inference_type, batch_noise=batch_noise,
                 matmul_or_conv=not self._turn_off_dropconnect_root(
                     dropconnect_keep_prob, self._learning_task_type))
-            log_prob_data_and_labels = value_gen.get_value(self._root)
+            log_prob_data_and_labels = self._value_gen.get_value(self._root)
             log_prob_data = self._log_likelihood(
                 dropconnect_keep_prob=dropconnect_keep_prob,
                 dropprod_keep_prob=dropprod_keep_prob,
