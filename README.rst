@@ -1,3 +1,5 @@
+This is the branch that should work for DGSM with some new features. Also involves some changes after discussion with Andrzej, though not sure if they are totally necessary.
+
 LibSPN
 ======
 
