@@ -1,3 +1,6 @@
+This is the branch where my SPN duplication code works!
+
+
 LibSPN
 ======
 
