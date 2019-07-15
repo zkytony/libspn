@@ -1,4 +1,5 @@
-This is the branch where my SPN duplication code works!
+This is the branch where libspn works for the GraphSPN code.
+Please refer to `the official libspn repository <https://github.com/pronobis/libspn]>`_ for the latest updates.
 
 
 LibSPN
@@ -83,3 +84,6 @@ Documentation
 
 Installation instructions and complete documentation can be found at
 http://www.libspn.org
+
+
+(This is the branch where my SPN duplication code works!)
